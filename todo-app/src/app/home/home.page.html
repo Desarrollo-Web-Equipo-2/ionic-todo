@@ -3,6 +3,15 @@
     <ion-title>
       Blank
     </ion-title>
+      <ion-list>
+        <ion-item>
+          <ion-select aria-label="user" value="{{currentUserService.currentUser.id}}" placeholder="Select user">
+            <ion-select-option *ngFor="let user of currentUserService.users" value="{{user.id}}">
+              {{user.name}}
+            </ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-list>
   </ion-toolbar>
 </ion-header>
 
@@ -17,4 +26,6 @@
     <strong>Ready to create an app?</strong>
     <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
   </div>
+
+  <app-task-card-list></app-task-card-list>
 </ion-content>

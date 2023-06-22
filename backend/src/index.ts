@@ -5,11 +5,16 @@ import { Task } from './task';
 import { arrayBuffer } from 'stream/consumers';
 import { json } from 'body-parser';
 
+var cors = require('cors')
+
+
 
 const app: Express = express();
 const port = 3000;
 
 app.use(express.json());
+app.use(cors())
+
 
 const users: User[] = [
   { id: 1, name: 'Pepe' },
