@@ -13,4 +13,17 @@ export class TasksService {
   getTasks() {
     return this.http.get<Task[]>(`http://localhost:3000/users/${this.currentUserService.currentUser.id}/tasks`);
   }
+
+  updateTask(task: Task) {
+    return this.http.put<Task>(
+      `http://localhost:3000/users/${this.currentUserService.currentUser.id}/task/${task.id}`,
+      task,
+    );
+  }
+
+  delete(taskId: number) {
+    return this.http.delete(
+      `http://localhost:3000/users/${this.currentUserService.currentUser.id}/tasks/${taskId}`
+    );
+  }
 }

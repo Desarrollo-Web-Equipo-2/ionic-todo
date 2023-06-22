@@ -1,3 +1,5 @@
-<div *ngFor="let task of taskList">
-  <app-task-card [task]="task"></app-task-card>
-</div>
+<ion-content>
+  <ion-list *ngIf="taskList">
+    <app-task-card *ngFor="let task of taskList" [task]="task"></app-task-card>
+  </ion-list>
+</ion-content>
